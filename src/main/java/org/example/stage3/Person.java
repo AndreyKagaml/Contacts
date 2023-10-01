@@ -14,7 +14,7 @@ public class Person extends Contact{
     private Gender gender;
 
     public Person(String name, String surname, String number, String dateOfBirth, String gender) {
-        super(number, name);
+        super(name, number);
         this.surname = surname;
         try {
             this.dateOfBirth = LocalDate.parse(dateOfBirth, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
@@ -52,8 +52,4 @@ public class Person extends Contact{
                 "Gender: " + gender +
                 '\n' + super.toString();
     }
-}
-
-enum Gender{
-    MALE, FEMALE
 }
